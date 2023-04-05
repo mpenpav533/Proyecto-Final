@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "642db0d0dcd28db4d075bdae"
+  },
+  "id_usuario": 0,
+  "username": "administrador"
+},{
+  "_id": {
+    "$oid": "642db0d0dcd28db4d075bdaf"
+  },
+  "id_usuario": 1,
+  "username": "prueba",
+  "puntos": 0,
+  "pJugadas": 0,
+  "pGanadas": 0,
+  "pPerdidas": 0
+}]
