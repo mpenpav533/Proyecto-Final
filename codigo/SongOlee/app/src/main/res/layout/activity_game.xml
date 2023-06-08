@@ -19,22 +19,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:text="@string/username" />
+            android:text="@string/username"
+            android:textSize="30sp"/>
 
         <Button
             android:id="@+id/btnInfo"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/username"
-            android:layout_marginEnd="-279dp"
+
+            android:layout_marginEnd="-90dp"
             android:background="@drawable/btn_info"
             android:text="@string/info"
-            android:textColor="#000000"
 
+            android:textColor="#000000"
             android:textSize="7sp" />
 
         <TextView
             android:id="@+id/intent1"
+            android:text="Intento 1"
+            android:gravity="center"
             android:layout_width="350dp"
             android:layout_height="30dp"
             android:layout_marginTop="100dp"
@@ -43,6 +47,8 @@
 
         <TextView
             android:id="@+id/intent2"
+            android:text="Intento 2"
+            android:gravity="center"
             android:layout_width="350dp"
             android:layout_height="30dp"
             android:layout_marginTop="140dp"
@@ -51,6 +57,8 @@
 
         <TextView
             android:id="@+id/intent3"
+            android:text="Intento 3"
+            android:gravity="center"
             android:layout_width="350dp"
             android:layout_height="30dp"
             android:layout_marginTop="180dp"
@@ -59,6 +67,8 @@
 
         <TextView
             android:id="@+id/intent4"
+            android:text="Intento 4"
+            android:gravity="center"
             android:layout_width="350dp"
             android:layout_height="30dp"
             android:layout_marginTop="220dp"
@@ -67,6 +77,8 @@
 
         <TextView
             android:id="@+id/intent5"
+            android:text="Intento 5"
+            android:gravity="center"
             android:layout_width="350dp"
             android:layout_height="30dp"
             android:layout_marginTop="260dp"
@@ -84,32 +96,24 @@
 
         <Button
             android:id="@+id/btnplay"
-            android:layout_width="wrap_content"
+            android:layout_width="341dp"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/text2"
             android:layout_marginTop="40dp"
-            android:text="reproducir"
-
             android:backgroundTint="#FFEB3B"
-            android:textColor="#000000"/>
-        <SeekBar
-            android:id="@+id/barraReproductor"
 
-            android:progress="0"
-            android:layout_alignTop="@+id/btnplay"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"/>
+            android:text="reproducir"
+            android:textColor="#000000" />
 
         <EditText
             android:id="@+id/textCancion"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
+            android:layout_width="346dp"
+            android:layout_height="37dp"
+            android:layout_alignTop="@+id/btnplay"
+            android:layout_marginTop="77dp"
             android:background="@drawable/border"
-            android:layout_marginTop="40dp"
-            android:textColor="#FF0000"
-            android:layout_alignTop="@+id/barraReproductor"
-            android:hint="@string/introduzca_el_nombre_de_la_cancion"/>
+            android:hint="@string/introduzca_el_nombre_de_la_cancion"
+            android:textColor="#FF0000" />
 
         <Button
             android:id="@+id/btnvalidar"
@@ -117,10 +121,12 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/textCancion"
             android:layout_alignEnd="@+id/textCancion"
-            android:layout_marginTop="40dp"
-            android:text="@string/validar"
+            android:layout_marginTop="39dp"
+            android:layout_marginEnd="23dp"
             android:backgroundTint="#FFEB3B"
-            android:textColor="#000000"/>
+            android:text="@string/validar"
+            android:textColor="#000000" />
+
         <Button
             android:id="@+id/btnsaltar"
             android:layout_width="wrap_content"

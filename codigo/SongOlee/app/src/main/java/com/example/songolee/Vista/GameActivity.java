@@ -14,6 +14,7 @@ import android.media.MediaPlayer;
 
 import android.os.Bundle;
 
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -87,7 +89,9 @@ public class GameActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         this.bbdd = this.getSharedPreferences("bbdd", Context.MODE_PRIVATE);
 
-
+        //creamos partida
+        creacionPartida();
+        //obtener cancion
         extraerCancion();
         //establecemos las funciones para los botones
 
@@ -102,11 +106,6 @@ public class GameActivity extends AppCompatActivity {
         binding.btnplay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //creamos partida
-                creacionPartida();
-                //obtener cancion
-
 
                 mediaPlayer = new MediaPlayer();
 
@@ -155,14 +154,16 @@ public class GameActivity extends AppCompatActivity {
 
                                 int num = u.getInt("insertado");
                                 //guardamos el intento en el que ha ganado
-                                switch (num){
+                                switch (num) {
                                     case 1:
+
                                         binding.intent1.setText("CORRECTO");
                                         binding.intent1.setBackgroundColor(Color.GREEN);
 
                                         resultPartida = true;
                                         modifPartida();
                                         mostrarDialogAcertado();
+                                        duracionReproduccion=4;
 
                                         break;
                                     case 2:
@@ -172,7 +173,7 @@ public class GameActivity extends AppCompatActivity {
                                         resultPartida = true;
                                         modifPartida();
                                         mostrarDialogAcertado();
-
+                                        duracionReproduccion=4;
                                         break;
                                     case 3:
 
@@ -181,7 +182,7 @@ public class GameActivity extends AppCompatActivity {
                                         resultPartida = true;
                                         modifPartida();
                                         mostrarDialogAcertado();
-
+                                        duracionReproduccion=4;
                                         break;
                                     case 4:
 
@@ -190,6 +191,7 @@ public class GameActivity extends AppCompatActivity {
                                         resultPartida = true;
                                         modifPartida();
                                         mostrarDialogAcertado();
+                                        duracionReproduccion=4;
                                         break;
                                     case 5:
 
@@ -198,26 +200,9 @@ public class GameActivity extends AppCompatActivity {
                                         resultPartida = true;
                                         modifPartida();
                                         mostrarDialogAcertado();
+                                        duracionReproduccion=4;
                                         break;
-                                    default:
-                                        binding.intent1.setText("INCORRECTO");
-                                        binding.intent1.setEnabled(false);
-                                        binding.intent2.setText("INCORRECTO");
-                                        binding.intent2.setEnabled(false);
-                                        binding.intent3.setText("INCORRECTO");
-                                        binding.intent3.setEnabled(false);
-                                        binding.intent4.setText("INCORRECTO");
-                                        binding.intent4.setEnabled(false);
-                                        binding.intent5.setText("INCORRECTO");
-                                        binding.intent5.setEnabled(false);
-
-                                        resultPartida = false;
-                                        modifPartida();
-                                        mostrarDialogIntentos();
-
-
                                 }
-                                //guardamos el nombre intorducido por el usuario
 
 
                             } catch (JSONException e) {
@@ -238,7 +223,6 @@ public class GameActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             //success
-
                             //guardamos la informacion de la fase que se ha insertado en un objeto de Fase
                             try {
                                 JSONObject u = new JSONObject(bbdd.getString("result", ""));
@@ -282,7 +266,7 @@ public class GameActivity extends AppCompatActivity {
                                         binding.intent5.setText("INCORRECTO");
                                         binding.intent5.setEnabled(false);
 
-                                        duracionReproduccion+= 7;
+                                        duracionReproduccion=4;
                                         resultPartida = false;
                                         modifPartida();
                                         mostrarDialogIntentos();
@@ -353,9 +337,11 @@ public class GameActivity extends AppCompatActivity {
                                 case 5:
                                     binding.intent5.setText("SALTAR");
                                     binding.intent5.setEnabled(false);
-
+                                    resultPartida=false;
                                     mostrarDialogIntentos();
+                                    duracionReproduccion=4;
                                     break;
+
                             }
 
                         } catch (JSONException e) {
@@ -514,7 +500,7 @@ public class GameActivity extends AppCompatActivity {
                 JSONObject convers = new JSONObject(bundle.getString("usuario"));
                 usuario = new Usuario();
                 usuario = usuario.converJson(convers);
-                binding.username.setText(usuario.getUsername());
+                binding.username.setText("Nick: "+usuario.getUsername());
             }
             catch (JSONException e) {
                 Toast.makeText(GameActivity.this, "Se ha perdido la información del usuario.", Toast.LENGTH_LONG).show();
@@ -523,10 +509,10 @@ public class GameActivity extends AppCompatActivity {
 
         }
     }
-    //metodo para mostrar un Snackbar donde dicde que supera los intentos
+    //metodo para mostrar un Snackbar donde dice que supera los intentos
     private void mostrarDialogIntentos() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("¡OH NO! FALLASTE");
+        builder.setTitle("¡OH NO! FALLASTE. \nLa cancion era: "+cancion.getNombre());
         builder.setMessage("Has superado el número de intentos. ¿Quieres volver a jugar otra partida?");
 
         // Botón de "Sí"
@@ -535,11 +521,11 @@ public class GameActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 // Acciones a realizar si el usuario selecciona "Sí"
 
-                binding.intent1.setText("");
-                binding.intent2.setText("");
-                binding.intent3.setText("");
-                binding.intent4.setText("");
-                binding.intent5.setText("");
+                binding.intent1.setText("Intento 1");
+                binding.intent2.setText("Intento 2");
+                binding.intent3.setText("Intento 3");
+                binding.intent4.setText("Intento 4");
+                binding.intent5.setText("Intento 5");
 
                 binding.intent1.setBackgroundColor(Color.WHITE);
                 binding.intent2.setBackgroundColor(Color.WHITE);
@@ -547,6 +533,7 @@ public class GameActivity extends AppCompatActivity {
                 binding.intent4.setBackgroundColor(Color.WHITE);
                 binding.intent5.setBackgroundColor(Color.WHITE);
 
+                binding.textCancion.setText("");
                 // Lógica para iniciar una nueva partida
                 //creamos partida
                 creacionPartida();
@@ -585,11 +572,18 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // Acciones a realizar si el usuario selecciona "Sí"
-                binding.intent1.setText("");
-                binding.intent2.setText("");
-                binding.intent3.setText("");
-                binding.intent4.setText("");
-                binding.intent5.setText("");
+                binding.intent1.setText("Intento 1");
+                binding.intent2.setText("Intento 2");
+                binding.intent3.setText("Intento 3");
+                binding.intent4.setText("Intento 4");
+                binding.intent5.setText("Intento 5");
+                binding.intent1.setBackgroundColor(Color.WHITE);
+                binding.intent2.setBackgroundColor(Color.WHITE);
+                binding.intent3.setBackgroundColor(Color.WHITE);
+                binding.intent4.setBackgroundColor(Color.WHITE);
+                binding.intent5.setBackgroundColor(Color.WHITE);
+
+                binding.textCancion.setText("");
                 // Lógica para iniciar una nueva partida
                 //creamos partida
                 creacionPartida();
