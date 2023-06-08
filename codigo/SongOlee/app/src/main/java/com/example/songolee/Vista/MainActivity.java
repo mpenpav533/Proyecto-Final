@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity  {
                     @Override
                     public void run() {
                         //error
-                        String username = bbdd.getString("result","");
-                        Toast.makeText(MainActivity.this, username, Toast.LENGTH_LONG).show();
+
+                        Toast.makeText(MainActivity.this, "Error al buscar el usuario", Toast.LENGTH_LONG).show();
                     }
                 });
 

@@ -115,7 +115,7 @@ public class GameActivity extends AppCompatActivity {
                     mediaPlayer.prepare();
                     mediaPlayer.start();
 
-                    // Reproducir durante 4 segundos
+                    // Reproducir durante x segundos
                     Thread thread = new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -221,7 +221,7 @@ public class GameActivity extends AppCompatActivity {
 
 
                             } catch (JSONException e) {
-                                e.printStackTrace();
+                                Toast.makeText(GameActivity.this, "Fallo al extraer la fase", Toast.LENGTH_SHORT).show();
                             }
 
 
@@ -292,7 +292,7 @@ public class GameActivity extends AppCompatActivity {
 
 
                             } catch (JSONException e) {
-                                e.printStackTrace();
+                                Toast.makeText(GameActivity.this, "Fallo al extraer la fase", Toast.LENGTH_SHORT).show();
                             }
 
 
@@ -359,7 +359,7 @@ public class GameActivity extends AppCompatActivity {
                             }
 
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            Toast.makeText(GameActivity.this, "Fallo al extraer la fase", Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -457,7 +457,7 @@ public class GameActivity extends AppCompatActivity {
 
 
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Toast.makeText(GameActivity.this, "Fallo al extraer la partida", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -493,7 +493,7 @@ public class GameActivity extends AppCompatActivity {
                             cancion.conver();
                             urlCancion = cancion.getUrl();
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            Toast.makeText(GameActivity.this, "Fallo al obtener la url", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
@@ -686,7 +686,7 @@ public class GameActivity extends AppCompatActivity {
                             callback.onFasesPartidasObtenidas(fases);
 
                         } catch (JSONException e) {
-                            throw new RuntimeException(e);
+                            Toast.makeText(GameActivity.this, "Fallo al obtener las fases", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }, new Runnable() {
@@ -735,7 +735,7 @@ public class GameActivity extends AppCompatActivity {
 
 
                         } catch (JSONException e) {
-                            throw new RuntimeException(e);
+                            Toast.makeText(GameActivity.this, "Fallo al obtener las partidas", Toast.LENGTH_SHORT).show();
                         }
 
 
