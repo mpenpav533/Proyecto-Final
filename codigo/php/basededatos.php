@@ -5,7 +5,7 @@ $mysql = new mysqli(
     "localhost",
     "prueba",
     "123456",
-    "SongOlé"
+    "songolé"
 );
 if($mysql->connect_error){
     die(json_encode([

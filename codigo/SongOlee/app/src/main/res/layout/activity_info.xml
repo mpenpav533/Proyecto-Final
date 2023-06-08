@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context = ".Vista.InfoActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FF0000"
+        android:layout_marginBottom="10dp"/>
+    <TextView
+        android:id="@+id/texttitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Información del Juego"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/textrules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/info_juego"
+            android:textSize="18sp"
+            android:lineSpacingExtra="8dp"
+            android:padding="16dp" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnstartgame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Comenzar Juego" />
+
+</LinearLayout>

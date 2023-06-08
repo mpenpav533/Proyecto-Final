@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Otros atributos del estilo -->
+        <item name="android:background">#FF0000</item>
+        <item name="android:logo">@drawable/logo</item>
+        <item name="android:displayOptions">showHome|useLogo</item>
+    </style>
+
+    <style name="PopupAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+</resources>
+
+
+

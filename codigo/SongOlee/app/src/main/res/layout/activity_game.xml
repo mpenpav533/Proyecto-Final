@@ -1,0 +1,137 @@
+<LinearLayout
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context = ".Vista.GameActivity"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/username" />
+
+        <Button
+            android:id="@+id/btnInfo"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/username"
+            android:layout_marginEnd="-279dp"
+            android:background="@drawable/btn_info"
+            android:text="@string/info"
+            android:textColor="#000000"
+
+            android:textSize="7sp" />
+
+        <TextView
+            android:id="@+id/intent1"
+            android:layout_width="350dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="100dp"
+            android:textColor="#FF0000"
+            android:background="@drawable/border" />
+
+        <TextView
+            android:id="@+id/intent2"
+            android:layout_width="350dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="140dp"
+            android:textColor="#FF0000"
+            android:background="@drawable/border" />
+
+        <TextView
+            android:id="@+id/intent3"
+            android:layout_width="350dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="180dp"
+            android:textColor="#FF0000"
+            android:background="@drawable/border" />
+
+        <TextView
+            android:id="@+id/intent4"
+            android:layout_width="350dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="220dp"
+            android:textColor="#FF0000"
+            android:background="@drawable/border" />
+
+        <TextView
+            android:id="@+id/intent5"
+            android:layout_width="350dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="260dp"
+            android:textColor="#FF0000"
+            android:background="@drawable/border" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="@string/escucha_atentamente"
+            android:layout_marginTop="300dp"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/btnplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/text2"
+            android:layout_marginTop="40dp"
+            android:text="reproducir"
+
+            android:backgroundTint="#FFEB3B"
+            android:textColor="#000000"/>
+        <SeekBar
+            android:id="@+id/barraReproductor"
+
+            android:progress="0"
+            android:layout_alignTop="@+id/btnplay"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"/>
+
+        <EditText
+            android:id="@+id/textCancion"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:layout_marginTop="40dp"
+            android:textColor="#FF0000"
+            android:layout_alignTop="@+id/barraReproductor"
+            android:hint="@string/introduzca_el_nombre_de_la_cancion"/>
+
+        <Button
+            android:id="@+id/btnvalidar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textCancion"
+            android:layout_alignEnd="@+id/textCancion"
+            android:layout_marginTop="40dp"
+            android:text="@string/validar"
+            android:backgroundTint="#FFEB3B"
+            android:textColor="#000000"/>
+        <Button
+            android:id="@+id/btnsaltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textCancion"
+            android:layout_alignStart="@+id/textCancion"
+            android:layout_marginTop="40dp"
+            android:text="@string/saltar_intento"
+            android:backgroundTint="#FFEB3B"
+            android:textColor="#000000"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

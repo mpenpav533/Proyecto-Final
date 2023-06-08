@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:id="@+id/layoutR"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context = ".Vista.RegisterActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FF0000"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height = "match_parent"
+        android:padding="20dp"
+        >
+
+        <TextView android:text = "@string/cuenta_nueva"
+            android:layout_width="wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/textview"
+            android:textSize = "35sp"
+            android:layout_alignParentTop = "true"
+            android:layout_centerHorizontal = "true" />
+
+        <TextView
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:text = "@string/songol"
+            android:id = "@+id/textView"
+            android:layout_below = "@+id/textview"
+            android:layout_centerHorizontal = "true"
+            android:textColor = "#FF2424"
+            android:textSize = "35sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="203dp"
+            android:layout_height="144dp"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo"
+            android:contentDescription="@string/logo" />
+
+        <EditText
+            android:id="@+id/etusername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="46dp"
+            android:layout_marginEnd="19dp"
+            android:focusable="true"
+            android:hint="@string/ingresa_tu_username"
+            android:textColorHighlight="#FF1515"
+            android:textColorHint="#FF0016" />
+
+        <EditText
+            android:id="@+id/etnombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etusername"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:focusable="true"
+            android:hint="Ingresa tu Nombre"
+            android:textColorHighlight="#FF1515"
+            android:textColorHint="#FF0016" />
+
+        <EditText
+            android:id="@+id/etedad"
+            android:layout_width="334dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etnombre"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:focusable="true"
+            android:hint="Ingresa tu Edad"
+            android:textColorHighlight="#FF1515"
+            android:textColorHint="#FF0016" />
+
+        <CheckBox
+            android:id="@+id/checkRol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Administrador"
+            android:layout_below="@+id/etedad"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="19dp"
+
+            />
+
+
+
+        <Button
+            android:id="@+id/btnback"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="-286dp"
+            android:layout_marginRight="-286dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toStartOf="@+id/textview"
+            android:layout_toLeftOf="@+id/textview"
+            android:backgroundTint="#FFEB3B"
+            android:text="Atrás"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btnregister"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-296dp"
+            android:layout_marginLeft="-296dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toEndOf="@+id/textview"
+            android:layout_toRightOf="@+id/textview"
+            android:backgroundTint="#FFEB3B"
+            android:text="Registrarse"
+            android:textColor="#000000" />
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>
